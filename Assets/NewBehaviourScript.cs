@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Windows;
 
 public class NewBehaviourScript : MonoBehaviour
 {
@@ -15,48 +17,49 @@ public class NewBehaviourScript : MonoBehaviour
     public List<int> trojki = new List<int>();
     public List<GameObject> ksztalty;
     public Gradient Grad;
+
     // Start is called before the first frame update
     void Start()
     {
-        Zadanie2();
-        for (int i = 0; i < dane.Count; i++)
-        {
-            if (dane[i] == 1)
-            {
-                jedynki.Add(1);
-            }
-            else if (dane[i] == 2)
-            {
-                dwojki.Add(1);
-            }
-            else if (dane[i] == 3)
-            {
-                trojki.Add(1);
-            }
-        }
+    // Zadanie2();
+    //   for (int i = 0; i < dane.Count; i++)
+    //   {
+    //       if (dane[i] == 1)
+    //   {
+    //            jedynki.Add(1);
+    //       }
+    //        else if (dane[i] == 2)
+    //        {
+    //         dwojki.Add(1);
+    //    }
+    //        else if (dane[i] == 3)
+    //        {
+    //            trojki.Add(1);
+    //        }
+    //    }
 
-        Debug.Log(dane.Count);
-        Debug.Log(jedynki.Count);
-        Debug.Log(dwojki.Count);
-        Debug.Log(trojki.Count);
+    //   Debug.Log(dane.Count);
+    //    Debug.Log(jedynki.Count);
+    //    Debug.Log(dwojki.Count);
+    //    Debug.Log(trojki.Count);
     }
-    private void Zadanie2()
-    {
-        foreach (GameObject obj in ksztalty)
-        {
-            if (obj.GetComponent<MeshRenderer>() !=null)
-            {
-                Debug.Log("3D");
-                Cube(obj.transform);
-            }
-            else if (obj.GetComponent<SpriteRenderer>() != null)
-            {
-                Debug.Log("2D");
-                Sprite(obj.GetComponent<SpriteRenderer>());
+   //private void Zadanie2()
+    //{
+    //    foreach (GameObject obj in ksztalty)
+    //    {
+    //        if (obj.GetComponent<MeshRenderer>() !=null)
+    //        {
+    //            Debug.Log("3D");
+    //            Cube(obj.transform);
+    //        }
+    //        else if (obj.GetComponent<SpriteRenderer>() != null)
+    //        {
+    //            Debug.Log("2D");
+    //            Sprite(obj.GetComponent<SpriteRenderer>());
 
-            }
-        }
-    }
+    //        }
+    //    }
+    //}
     //private void Zadanie3()
     //{
     //    foreach (GameObject obj in ksztalty)
@@ -67,23 +70,42 @@ public class NewBehaviourScript : MonoBehaviour
     //        }
     //    }
     //}
-    private void Sprite(SpriteRenderer sprite)
-    {
-        float Y = sprite.transform.position.y;
-        sprite.color = Grad.Evaluate(Y);
+   //private void Sprite(SpriteRenderer sprite)
+    //{
+    //    float Y = sprite.transform.position.y;
+    //    sprite.color = Grad.Evaluate(Y);
       
-    }
-    private void Cube(Transform kostka)
-    {
-        float X = kostka.position.x;
-        kostka.rotation = Quaternion.Euler(X*10, 0, 0);
-    }
+    //}
+    //private void Cube(Transform kostka)
+    //{
+    //    float X = kostka.position.x;
+    //    kostka.rotation = Quaternion.Euler(X*10, 0, 0);
+    
+    //{
+    //    float Y = sprite.transform.position.y;
+    //    sprite.color = Grad.Evaluate(Y);
+    
 
 
     // Update is called once per frame
     void Update()
-    {
-        Zadanie2();
-
-    }
+    //{
+    // Zadanie2();
+    // }
+    { 
+        //float horizontal = Input.GetAxis("Horizontal");
+        //float vertical = Input.GetAxis("Vertical");
+        //transofrm.position = new Vector3(
+        //    transform.position.x + horizontal * SpeedTreeImporter * Time.deltaTime,
+        //    transform.position.y + vertical * SpeedTreeImporter * Time.deltaTime,
+        //    transform.position.z);
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    follow = !follow;
+        //}
+        //if (follow == true)
+        //{
+        //    Vector2 worldPos = (Vector2))Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //    transform.position = new Vector3(worldPos.x, worldPos.y, transform.position.z);
+        }
 }
